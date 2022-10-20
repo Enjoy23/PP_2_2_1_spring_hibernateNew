@@ -1,5 +1,7 @@
 package hiber.model;
 
+import org.springframework.context.annotation.Lazy;
+
 import javax.persistence.*;
 
 @Entity
@@ -31,7 +33,7 @@ public class User {
       this.email = email;
    }
 
-   public User(Car car, String firstName, String lastName, String email) {    //КОНСТРУКТОР С МАШИНОЙ
+   public User( Car car, String firstName, String lastName, String email) {    //КОНСТРУКТОР С МАШИНОЙ
       this.car = car;
       this.firstName = firstName;
       this.lastName = lastName;
@@ -76,11 +78,11 @@ public class User {
 
    @Override
    public String toString() {
-      return "User{" +
-              " id=" + id +
-              ", firstName='" + firstName + '\'' +
-              ", lastName='" + lastName + '\'' +
-              ", email='" + email + '\'' +
+      return "\nUser{" +
+              "\n id=" + id +
+              "\n firstName='" + firstName + '\'' +
+              "\n lastName='" + lastName + '\'' +
+              "\n email='" + email + '\'' +
               '}';
    }
 

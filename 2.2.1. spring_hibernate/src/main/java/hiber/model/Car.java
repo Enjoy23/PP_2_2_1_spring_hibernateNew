@@ -1,5 +1,7 @@
 package hiber.model;
 
+import org.springframework.context.annotation.Lazy;
+
 import javax.persistence.*;
 
 @Entity
@@ -14,12 +16,12 @@ public class Car {
     @JoinColumn(name = "user_id")
     private User user;
 
-    public Car(String model, int series) {   //КОНСТРУКТОР БЕЗ ЮЗЕРА
+    public Car( String model, int series) {   //КОНСТРУКТОР БЕЗ ЮЗЕРА
         this.model = model;
         this.series = series;
     }
 
-    public Car(User user, String model, int series) {   //КОНСТРУКТОР С ЮЗЕРОМ
+    public Car( User user, String model, int series) {   //КОНСТРУКТОР С ЮЗЕРОМ
         this.user = user;
         this.model = model;
         this.series = series;

@@ -24,7 +24,7 @@ public class CarDaoImp implements CarDao{
     public Car getCarByUserFirstName(String firstName) {
         String hql = "FROM Car where user.firstName = :firstName";
         Session session = sessionFactory.getCurrentSession();
-            TypedQuery<Car> query = session.createQuery(hql);
+            TypedQuery<Car> query = session.createQuery(hql,Car.class);
             query.setParameter("firstName",firstName);
             return query.getSingleResult();
     }
