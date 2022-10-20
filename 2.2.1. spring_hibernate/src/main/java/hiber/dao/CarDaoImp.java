@@ -20,13 +20,6 @@ public class CarDaoImp implements CarDao{
 
     @Override
     public void add(Car car) { sessionFactory.getCurrentSession().save(car); }
-    @Override
-    public Car getCarByUserFirstName(String firstName) {
-        String hql = "FROM Car where user.firstName = :firstName";
-        Session session = sessionFactory.getCurrentSession();
-            TypedQuery<Car> query = session.createQuery(hql,Car.class);
-            query.setParameter("firstName",firstName);
-            return query.getSingleResult();
-    }
+
 
 }

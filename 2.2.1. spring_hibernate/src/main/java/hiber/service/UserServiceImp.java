@@ -1,6 +1,5 @@
 package hiber.service;
 
-import hiber.dao.CarDao;
 import hiber.dao.UserDao;
 import hiber.model.Car;
 import hiber.model.User;
@@ -33,6 +32,11 @@ public class UserServiceImp implements UserService {
    @Override
    public User getUserByModelAndSeries(String model, int series) {
       return userDao.getUserByModelAndSeries(model,series);
+   }
+
+   @Override
+   public Car getCarByUserFirstName(String firstName) {
+      return userDao.getCarByUserFirstName(firstName);
    }
 
 }

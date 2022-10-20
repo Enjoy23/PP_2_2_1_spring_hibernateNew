@@ -4,7 +4,6 @@ import hiber.model.Car;
 import hiber.model.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -49,6 +48,19 @@ public class UserDaoImp implements UserDao {
       } catch (Exception e) {
          System.out.println("Нет подходящего юзера");
          return new User();
+      }
+   }
+
+   @Override
+   public Car getCarByUserFirstName(String firstName) {
+      String hql2 = "FROM User where firstName = :firstName";
+      try (Session session = sessionFactory.openSession()) {
+         TypedQuery<User> query = session.createQuery(hql2, User.class);
+         query.setParameter("firstName", firstName);
+         return query.getSingleResult().getCar();
+      } catch (Exception e) {
+         System.out.println("Нет подходящей тачки");
+         return new Car();
       }
    }
 }

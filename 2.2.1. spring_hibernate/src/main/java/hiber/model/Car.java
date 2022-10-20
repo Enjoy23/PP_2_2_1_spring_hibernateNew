@@ -64,11 +64,10 @@ public class Car {
 
     @Override
     public String toString() {
-        return "Car{" +
-                "id=" + id/* +
-                ", user=" + user */ +
-                ", model='" + model + '\'' +
-                ", series=" + series +
-                '}';
+        return "\nCar{" +
+                "\n id = '" + id + '\'' +
+                "\n model = '" + model + '\'' +
+                "\n series = '" + series + '\'' +
+                "\n" + '}';
     }
 }

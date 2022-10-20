@@ -14,12 +14,9 @@ public class CarServiceImp implements CarService{
         this.carDao = carDao;
     }
 
-    @Transactional
+
     @Override
     public void add(Car car) { carDao.add(car); }
-    @Transactional
-    @Override
-    public Car getCarByUserFirstName(String firstName) {
-        return carDao.getCarByUserFirstName(firstName);
-    }
+
+
 }

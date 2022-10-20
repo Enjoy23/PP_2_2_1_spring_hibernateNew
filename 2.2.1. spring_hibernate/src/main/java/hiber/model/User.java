@@ -80,10 +80,11 @@ public class User {
    public String toString() {
       return "\nUser{" +
               "\n id=" + id +
-              "\n firstName='" + firstName + '\'' +
-              "\n lastName='" + lastName + '\'' +
-              "\n email='" + email + '\'' +
-              '}';
+              "\n firstName = '" + firstName + '\'' +
+              "\n lastName = '" + lastName + '\'' +
+              "\n email = '" + email + '\'' +
+              "\n Car Model = '" + car.getModel() + '\'' +
+              '\n' + '}';
    }
 
 }
